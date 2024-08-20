@@ -1,0 +1,19 @@
+name: CodeBuild runners hosted on AWS
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        environment:
+          - development
+          - first-tenant
+
+    environment: ${{ matrix.environment }}
+    concurrency: ${{ matrix.concurrency }}
+
+    runs-on: codebuild-infrastructure-test-role-${{ github.run_id }}-${{ github.run_attempt }}
