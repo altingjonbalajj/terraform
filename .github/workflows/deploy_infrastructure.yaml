@@ -17,3 +17,12 @@ jobs:
     concurrency: ${{ matrix.concurrency }}
 
     runs-on: codebuild-infrastructure-test-role-${{ github.run_id }}-${{ github.run_attempt }}
+
+    steps:
+      # This might not be necessary when it runs on an actual workflow, only required on local actions which is this case
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.1.7"
