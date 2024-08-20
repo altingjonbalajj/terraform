@@ -14,7 +14,7 @@ jobs:
           - first-tenant
 
     environment: ${{ matrix.environment }}
-    concurrency: ${{ matrix.concurrency }}
+    concurrency: ${{ matrix.environment }}
 
     runs-on: codebuild-infrastructure-test-role-${{ github.run_id }}-${{ github.run_attempt }}
 
