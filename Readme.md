@@ -1,0 +1,1 @@
+![example workflow](https://github.com/altingjonbalajj/terraform/actions/workflows/deploy_infrastructure.yaml/badge.svg)
