@@ -28,4 +28,7 @@ jobs:
           terraform_version: "1.1.7"
       - name: Dive into tenant
         shell: bash
-        run: cd ${{ matrix.environment }} && terraform init && terraform plan && sleep 60
+        run: cd ${{ matrix.environment }} && terraform init && terraform plan
+      - name: What is my session name
+        shell: bash
+        run: aws sts get-caller-identity
