@@ -19,9 +19,6 @@ jobs:
     runs-on: codebuild-infrastructure-test-role-${{ github.run_id }}-${{ github.run_attempt }}
 
     steps:
-      - name: Check terraform version
-        shell: sh
-        run: terraform version
       # This might not be necessary when it runs on an actual workflow, only required on local actions which is this case
       - name: Checkout
         uses: actions/checkout@v3
