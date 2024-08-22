@@ -28,7 +28,10 @@ jobs:
           terraform_version: "1.1.7"
       - name: Dive into tenant
         shell: bash
-        run: cd ${{ vars.FOLDER_PATH }} && terraform init && terraform plan
+        run: cd ${{ vars.FOLDER_PATH }}
+      - name: Terraform
+        shell: bash
+        run: terraform init && terraform plan
       - name: What is my session name
         shell: sh
         run: aws sts get-caller-identity
