@@ -16,7 +16,7 @@ jobs:
     environment: ${{ matrix.environment }}
     concurrency: ${{ matrix.environment }}
 
-    runs-on: codebuild-infrastructure-test-role-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: cardoai-sw-dv-sw-test-github-runner-project-${{ github.run_id }}-${{ github.run_attempt }}
 
     steps:
       # This might not be necessary when it runs on an actual workflow, only required on local actions which is this case
