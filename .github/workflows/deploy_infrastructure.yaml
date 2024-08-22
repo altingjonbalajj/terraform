@@ -22,8 +22,6 @@ jobs:
       # This might not be necessary when it runs on an actual workflow, only required on local actions which is this case
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Nodejs
-        uses: actions/setup-node@v1
       - name: Setup terraform
         uses: hashicorp/setup-terraform@v3
         with:
